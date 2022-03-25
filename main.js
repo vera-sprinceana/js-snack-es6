@@ -21,20 +21,25 @@ let biciDacorsa=[
     }
 ]
 console.log(biciDacorsa)
-let[nome, peso]=biciDacorsa;
-console.log(nome, peso)
 
- let pesoMaggiore=[];
+
+ let pesoMinore=[];
 let minore= biciDacorsa[0]
 
 for(i=0; i<biciDacorsa.length; i++){
     let x=biciDacorsa[i];
+    biciDacorsa[i]=minore;
+    
     if(minore['peso']> x['peso']){
         minore=x;
+      
     }
 }
 console.log(minore)
-document.getElementById("bici").innerHTML+=`${minore.nome} ${minore.peso}`;
+let {nome, peso}=minore;
+let test=document.getElementById("bici");
+test.innerHTML= `<div>Bici con peso minore è: ${nome} -> ${peso} kg`
+
 
 
 // Snack2
@@ -43,3 +48,44 @@ document.getElementById("bici").innerHTML+=`${minore.nome} ${minore.peso}`;
 // Generare numeri random al posto degli 0 nelle proprietà:
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+let squadre=[
+    {
+        nomeSquadra:'Torino',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nomeSquadra:'Juventus',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nomeSquadra:'Milan',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nomeSquadra:'Inter',
+        puntiFatti: 0,
+        falliSubiti: 0
+    }
+]
+console.log(squadre)
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+ ;
+ let{nomeSquadra, puntiFatti, falliSubiti}=squadre;
+  
+     puntiFatti=squadre.puntiFatti=getRandomInt(50);
+    
+     falliSubiti= squadre.falliSubiti=getRandomInt(70);
+    
+    
+console.log(puntiFatti, falliSubiti)
+
+//let array=[];
+//array.push(nomeSquadra, falliSubiti)
+let array=[nomeSquadra, falliSubiti]
+
+console.log(array)
