@@ -75,17 +75,24 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
  ;
- let{nomeSquadra, puntiFatti, falliSubiti}=squadre;
-  
-     puntiFatti=squadre.puntiFatti=getRandomInt(50);
-    
-     falliSubiti= squadre.falliSubiti=getRandomInt(70);
-    
-    
-console.log(puntiFatti, falliSubiti)
+ for(let i=0; i<squadre.length; i++) {
+     let element= squadre[i];
+     element.puntiFatti=getRandomInt( 100);
+     element.falliSubiti=getRandomInt( 100);
+ }
 
-//let array=[];
-//array.push(nomeSquadra, falliSubiti)
-let array=[nomeSquadra, falliSubiti]
-
-console.log(array)
+ let nuovoArray=[];
+ for(let i=0; i<squadre.length; i++){
+     let element= squadre[i];
+     let{nomeSquadra ,  falliSubiti}=element;
+     nuovoArray.push(
+         {
+             nome,
+             falliSubiti
+         }
+     )
+         
+    console.log(element); 
+ }
+ 
+ console.log(nuovoArray)
