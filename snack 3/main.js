@@ -6,8 +6,8 @@ Eseguiamo questo esercizio prima con forEach e poi con filter.*/
 
 const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
 
-let min=2;
-let max=5;
+let min=parseInt(prompt("inserisci un numero compreso tra 0 e 5"));
+let max=parseInt(prompt("inserisci un numero compreso tra 0 e 5"));
 let nuovoArray=[]
 myArray.forEach(
     (element, index)=>{
@@ -22,7 +22,7 @@ console.log(nuovoArray)
  let nuovoArray2=myArray.filter(
      (element, index)=>{
          if(index > min && index < max){
-             return (true)
+             return true
          }
          return false
     }
